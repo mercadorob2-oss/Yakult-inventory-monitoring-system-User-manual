@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YakultScanner Mobile App - User Manual</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div class="container">
         <!-- Sidebar Navigation -->
@@ -23,27 +25,44 @@
                 <input type="text" id="search-input" placeholder="Search mobile guide...">
             </div>
 
+            <!-- PDF Export Utility -->
             <div style="padding: 0 1.5rem; margin-bottom: 1rem;">
-                <a href="index.html" class="btn btn-secondary" style="width: 100%; display: inline-flex; align-items: center; justify-content: center; gap: 8px;">
+                <button onclick="window.print()" class="btn btn-secondary"
+                    style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                    <span>🖨️</span> <span class="text">Print / Save as PDF</span>
+                </button>
+            </div>
+
+            <div style="padding: 0 1.5rem; margin-bottom: 1rem;">
+                <a href="index.html" class="btn btn-secondary"
+                    style="width: 100%; display: inline-flex; align-items: center; justify-content: center; gap: 8px;">
                     <span>↩️</span> <span class="text">Back to Desktop Manual</span>
                 </a>
             </div>
 
             <ul class="nav-menu">
-                <li><a href="#mobile-overview" class="nav-link active"><span class="icon">🚀</span> <span class="text">Overview</span></a></li>
-                <li><a href="#installation" class="nav-link"><span class="icon">⬇️</span> <span class="text">Installation</span></a></li>
-                <li><a href="#auth" class="nav-link"><span class="icon">🔐</span> <span class="text">Login & Accounts</span></a></li>
-                <li><a href="#scanning" class="nav-link"><span class="icon">📷</span> <span class="text">Scanning Modes</span></a></li>
-                <li><a href="#hardware" class="nav-link"><span class="icon">🧰</span> <span class="text">Hardware Setup</span></a></li>
-                <li><a href="#data" class="nav-link"><span class="icon">🗂️</span> <span class="text">Data & Uploads</span></a></li>
-                <li><a href="#support" class="nav-link"><span class="icon">🔧</span> <span class="text">Troubleshooting</span></a></li>
+                <li><a href="#mobile-overview" class="nav-link active"><span class="icon">🚀</span> <span
+                            class="text">Overview</span></a></li>
+                <li><a href="#installation" class="nav-link"><span class="icon">⬇️</span> <span
+                            class="text">Installation</span></a></li>
+                <li><a href="#auth" class="nav-link"><span class="icon">🔐</span> <span class="text">Login &
+                            Accounts</span></a></li>
+                <li><a href="#scanning" class="nav-link"><span class="icon">📷</span> <span class="text">Scanning
+                            Modes</span></a></li>
+                <li><a href="#hardware" class="nav-link"><span class="icon">🧰</span> <span class="text">Hardware
+                            Setup</span></a></li>
+                <li><a href="#data" class="nav-link"><span class="icon">🗂️</span> <span class="text">Data &
+                            Uploads</span></a></li>
+                <li><a href="#support" class="nav-link"><span class="icon">🔧</span> <span
+                            class="text">Troubleshooting</span></a></li>
             </ul>
         </nav>
 
         <!-- Main Content -->
         <main class="content">
             <div class="header">
-                <div style="display: flex; justify-content: space-between; align-items: start; gap: 1rem; flex-wrap: wrap;">
+                <div
+                    style="display: flex; justify-content: space-between; align-items: start; gap: 1rem; flex-wrap: wrap;">
                     <div>
                         <h1>YakultScanner Mobile App</h1>
                         <p class="subtitle">Field scanning companion for Yakult Inventory System</p>
@@ -68,15 +87,20 @@
                 <div class="section-content">
                     <div class="card">
                         <h3>What is YakultScanner?</h3>
-                        <p>YakultScanner is the mobile companion app for the Yakult Inventory Management System. It lets field teams capture serials and dispatch updates directly from their devices.</p>
+                        <p>YakultScanner is the mobile companion app for the Yakult Inventory Management System. It lets
+                            field teams capture serials and dispatch updates directly from their devices.</p>
                         <ul>
                             <li>Fast barcode/QR capture with CameraX + ML Kit</li>
                             <li>Offline-friendly flows with queued uploads</li>
                             <li>Dispatch validation and history visibility</li>
                         </ul>
                         <div class="image-grid">
-                            <figure><img src="IMAGES_MOBILE/Home_screen.png" alt="Home screen"><figcaption>Home screen</figcaption></figure>
-                            <figure><img src="IMAGES_MOBILE/homescreen_qr.png" alt="Home with QR prompt"><figcaption>QR prompt from home</figcaption></figure>
+                            <figure><img src="IMAGES_MOBILE/home_screen.png" alt="Home screen">
+                                <figcaption>Home screen</figcaption>
+                            </figure>
+                            <figure><img src="IMAGES_MOBILE/homescreen_qr.png" alt="Home with QR prompt">
+                                <figcaption>QR prompt from home</figcaption>
+                            </figure>
                         </div>
                     </div>
                     <div class="card">
@@ -105,15 +129,23 @@
                             <li>Open the APK and complete installation.</li>
                             <li>Launch the app and grant camera/storage permissions.</li>
                         </ol>
-                        <div class="tip"><strong>Image placeholder:</strong> Install flow + permission prompts.</div>
+                        <div class="card"
+                            style="background: #fdf2f2; border: 1px dashed #e31e24; text-align: center; padding: 2rem;">
+                            <div style="font-size: 3rem; margin-bottom: 1rem;">📷</div>
+                            <h4>Screenshots Coming Soon</h4>
+                            <p style="color: #666;">Our team is currently capturing the latest installation flow screens
+                                for Android 14. Check back in the next version!</p>
+                        </div>
                     </div>
                     <div class="card">
                         <h3>Environment Configuration</h3>
-                        <p>The app reads its API base URL from the packaged config. If you need to switch environments (e.g., staging vs. production), request an updated build from IT.</p>
+                        <p>The app reads its API base URL from the packaged config. If you need to switch environments
+                            (e.g., staging vs. production), request an updated build from IT.</p>
                         <ul>
                             <li><strong>API base URL:</strong> bundled in build; no in-app switch.</li>
                             <li><strong>Auth domain:</strong> matches Yakult IMS backend.</li>
-                            <li><strong>Certificates:</strong> uses cleartext traffic per manifest; ensure network allows it.</li>
+                            <li><strong>Certificates:</strong> uses cleartext traffic per manifest; ensure network
+                                allows it.</li>
                         </ul>
                     </div>
                 </div>
@@ -134,18 +166,23 @@
                             <li>On first login, camera permission will be requested to enable scanning.</li>
                         </ul>
                         <div class="image-grid">
-                            <figure><img src="IMAGES_MOBILE/login_screen.png" alt="Login screen"><figcaption>Login</figcaption></figure>
+                            <figure><img src="IMAGES_MOBILE/login_screen.png" alt="Login screen">
+                                <figcaption>Login</figcaption>
+                            </figure>
                         </div>
                     </div>
                     <div class="card">
                         <h3>Registration</h3>
-                        <p>If enabled, you can create an account with the same validation rules as the desktop system. Otherwise, accounts are provisioned by administrators.</p>
+                        <p>If enabled, you can create an account with the same validation rules as the desktop system.
+                            Otherwise, accounts are provisioned by administrators.</p>
                         <ul>
                             <li>Password policy mirrors desktop rules.</li>
                             <li>Email verification follows backend settings (if enabled).</li>
                         </ul>
                         <div class="image-grid">
-                            <figure><img src="IMAGES_MOBILE/register_screen.png" alt="Registration screen"><figcaption>Register</figcaption></figure>
+                            <figure><img src="IMAGES_MOBILE/register_screen.png" alt="Registration screen">
+                                <figcaption>Register</figcaption>
+                            </figure>
                         </div>
                     </div>
                 </div>
@@ -165,8 +202,12 @@
                             <li>Good for single or continuous scans.</li>
                         </ul>
                         <div class="image-grid">
-                            <figure><img src="IMAGES_MOBILE/Scan_qr_interface.png" alt="Camera scan interface"><figcaption>Camera scan interface</figcaption></figure>
-                            <figure><img src="IMAGES_MOBILE/homescreen_qr.png" alt="Scan from home shortcut"><figcaption>Scan shortcut from home</figcaption></figure>
+                            <figure><img src="IMAGES_MOBILE/scan_qr_interface.png" alt="Camera scan interface">
+                                <figcaption>Camera scan interface</figcaption>
+                            </figure>
+                            <figure><img src="IMAGES_MOBILE/homescreen_qr.png" alt="Scan from home shortcut">
+                                <figcaption>Scan shortcut from home</figcaption>
+                            </figure>
                         </div>
                     </div>
                     <div class="card">
@@ -176,7 +217,9 @@
                             <li>Flags duplicates/invalid formats quickly.</li>
                         </ul>
                         <div class="image-grid">
-                            <figure><img src="IMAGES_MOBILE/Direct_serial_scan.png" alt="Direct serial scan"><figcaption>Direct serial scan</figcaption></figure>
+                            <figure><img src="IMAGES_MOBILE/direct_serial_scan.png" alt="Direct serial scan">
+                                <figcaption>Direct serial scan</figcaption>
+                            </figure>
                         </div>
                     </div>
                     <div class="card">
@@ -186,7 +229,9 @@
                             <li>Review and edit entries; duplicates are flagged.</li>
                         </ul>
                         <div class="image-grid">
-                            <figure><img src="IMAGES_MOBILE/add_items_byserial.png" alt="Add items by serial"><figcaption>Batch add by serial</figcaption></figure>
+                            <figure><img src="IMAGES_MOBILE/add_items_byserial.png" alt="Add items by serial">
+                                <figcaption>Batch add by serial</figcaption>
+                            </figure>
                         </div>
                     </div>
                     <div class="card">
@@ -196,7 +241,9 @@
                             <li>Useful for scanned paperwork or emailed labels.</li>
                         </ul>
                         <div class="image-grid">
-                            <figure><img src="IMAGES_MOBILE/upload_qr.png" alt="Upload QR from gallery"><figcaption>Upload QR from gallery</figcaption></figure>
+                            <figure><img src="IMAGES_MOBILE/upload_qr.png" alt="Upload QR from gallery">
+                                <figcaption>Upload QR from gallery</figcaption>
+                            </figure>
                         </div>
                     </div>
                 </div>
@@ -211,7 +258,10 @@
                     <div class="card">
                         <h3>Honeywell / External Scanner Support</h3>
                         <ul>
-                            <li>Listens to broadcast intents: <code>com.honeywell.decode.intent.action.DECODE_DATA</code> and <code>com.example.yakultscanner.SCAN</code>.</li>
+                            <li>Listens to broadcast intents:
+                                <code>com.honeywell.decode.intent.action.DECODE_DATA</code> and
+                                <code>com.example.yakultscanner.SCAN</code>.
+                            </li>
                             <li>Ensure Honeywell DataCollection app is configured to send broadcasts.</li>
                             <li>App captures scans even when the camera view is not active.</li>
                         </ul>
@@ -224,7 +274,9 @@
                             <li>FileProvider: enabled for secure file sharing on Android 7.0+.</li>
                         </ul>
                         <div class="image-grid">
-                            <figure><img src="IMAGES_MOBILE/Scan_history.png" alt="Scan history view"><figcaption>Scan history</figcaption></figure>
+                            <figure><img src="IMAGES_MOBILE/scan_history.png" alt="Scan history view">
+                                <figcaption>Scan history</figcaption>
+                            </figure>
                         </div>
                     </div>
                 </div>
@@ -243,9 +295,15 @@
                             <li>Identify pending/failed items and retry as needed.</li>
                         </ul>
                         <div class="image-grid">
-                            <figure><img src="IMAGES_MOBILE/Processed_updates_page.png" alt="Processed updates"><figcaption>Processed updates</figcaption></figure>
-                            <figure><img src="IMAGES_MOBILE/Pending_updates_page.png" alt="Pending updates"><figcaption>Pending updates</figcaption></figure>
-                            <figure><img src="IMAGES_MOBILE/Item_after_processed.png" alt="Item after processed"><figcaption>After processing</figcaption></figure>
+                            <figure><img src="IMAGES_MOBILE/processed_updates_page.png" alt="Processed updates">
+                                <figcaption>Processed updates</figcaption>
+                            </figure>
+                            <figure><img src="IMAGES_MOBILE/pending_updates_page.png" alt="Pending updates">
+                                <figcaption>Pending updates</figcaption>
+                            </figure>
+                            <figure><img src="IMAGES_MOBILE/item_after_processed.png" alt="Item after processed">
+                                <figcaption>After processing</figcaption>
+                            </figure>
                         </div>
                     </div>
                     <div class="card">
@@ -255,7 +313,9 @@
                             <li>Filter by success/failed/queued.</li>
                         </ul>
                         <div class="image-grid">
-                            <figure><img src="IMAGES_MOBILE/Scan_history.png" alt="Scan history"><figcaption>Scan history</figcaption></figure>
+                            <figure><img src="IMAGES_MOBILE/scan_history.png" alt="Scan history">
+                                <figcaption>Scan history</figcaption>
+                            </figure>
                         </div>
                     </div>
                     <div class="card">
@@ -266,11 +326,21 @@
                             <li>Upload updates when ready.</li>
                         </ul>
                         <div class="image-grid">
-                            <figure><img src="IMAGES_MOBILE/Serial_scan_dashboard.png" alt="Serial scan dashboard"><figcaption>Serial scan dashboard</figcaption></figure>
-                            <figure><img src="IMAGES_MOBILE/dispatch_details.png" alt="Dispatch details"><figcaption>Dispatch details</figcaption></figure>
-                            <figure><img src="IMAGES_MOBILE/report_issue.png" alt="Report issue flow"><figcaption>Report issue</figcaption></figure>
-                            <figure><img src="IMAGES_MOBILE/Upload_updates.png" alt="Upload updates"><figcaption>Upload updates</figcaption></figure>
-                            <figure><img src="IMAGES_MOBILE/Processed_updates_page.png" alt="Processed updates summary"><figcaption>Processed summary</figcaption></figure>
+                            <figure><img src="IMAGES_MOBILE/serial_scan_dashboard.png" alt="Serial scan dashboard">
+                                <figcaption>Serial scan dashboard</figcaption>
+                            </figure>
+                            <figure><img src="IMAGES_MOBILE/dispatch_details.png" alt="Dispatch details">
+                                <figcaption>Dispatch details</figcaption>
+                            </figure>
+                            <figure><img src="IMAGES_MOBILE/report_issue.png" alt="Report issue flow">
+                                <figcaption>Report issue</figcaption>
+                            </figure>
+                            <figure><img src="IMAGES_MOBILE/upload_updates.png" alt="Upload updates">
+                                <figcaption>Upload updates</figcaption>
+                            </figure>
+                            <figure><img src="IMAGES_MOBILE/processed_updates_page.png" alt="Processed updates summary">
+                                <figcaption>Processed summary</figcaption>
+                            </figure>
                         </div>
                     </div>
                 </div>
@@ -285,17 +355,22 @@
                     <div class="card">
                         <h3>Common Issues</h3>
                         <ul>
-                            <li><strong>Camera permission denied:</strong> Enable in Settings → Apps → YakultScanner → Permissions.</li>
-                            <li><strong>Scanner broadcasts not received:</strong> Verify Honeywell DataCollection broadcast profile.</li>
+                            <li><strong>Camera permission denied:</strong> Enable in Settings → Apps → YakultScanner →
+                                Permissions.</li>
+                            <li><strong>Scanner broadcasts not received:</strong> Verify Honeywell DataCollection
+                                broadcast profile.</li>
                             <li><strong>Uploads failing:</strong> Check network, then retry from Uploaded Items.</li>
-                            <li><strong>Duplicate serials:</strong> Remove duplicates in Batch or Direct mode before submitting.</li>
+                            <li><strong>Duplicate serials:</strong> Remove duplicates in Batch or Direct mode before
+                                submitting.</li>
                             <li><strong>Blurry scans:</strong> Clean lens, enable torch, move to 10–20 cm distance.</li>
-                            <li><strong>Slow detection:</strong> Improve lighting, avoid glossy reflections, center barcode.</li>
+                            <li><strong>Slow detection:</strong> Improve lighting, avoid glossy reflections, center
+                                barcode.</li>
                         </ul>
                     </div>
                     <div class="card">
                         <h3>Support Contacts</h3>
-                        <p>Contact Yakult IT for updated builds or environment changes. Provide device model, Android version, and logs when reporting issues.</p>
+                        <p>Contact Yakult IT for updated builds or environment changes. Provide device model, Android
+                            version, and logs when reporting issues.</p>
                     </div>
                 </div>
             </section>
@@ -309,4 +384,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

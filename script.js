@@ -76,23 +76,64 @@ document.addEventListener('DOMContentLoaded', function () {
         searchInput.addEventListener('input', function (e) {
             const searchTerm = e.target.value.toLowerCase();
             const sections = document.querySelectorAll('.section');
-            let hasResults = false;
+
+            // Function to clear highlights
+            const clearHighlights = (element) => {
+                const highlights = element.querySelectorAll('.highlight');
+                highlights.forEach(hl => {
+                    const parent = hl.parentNode;
+                    parent.replaceChild(document.createTextNode(hl.textContent), hl);
+                    parent.normalize();
+                });
+            };
+
+            // Function to apply highlights safely to text nodes
+            const applyHighlight = (element, term) => {
+                if (!term) return;
+                const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, null, false);
+                const nodes = [];
+                let node;
+                while (node = walker.nextNode()) nodes.push(node);
+
+                nodes.forEach(textNode => {
+                    const text = textNode.textContent;
+                    const index = text.toLowerCase().indexOf(term);
+                    if (index >= 0) {
+                        const span = document.createElement('span');
+                        span.innerHTML = text.replace(new RegExp(`(${term})`, 'gi'), '<span class="highlight">$1</span>');
+                        textNode.parentNode.replaceChild(span, textNode);
+                    }
+                });
+            };
 
             sections.forEach(section => {
-                // If search is empty, collapse all except the first one (optional) or revert to default
+                // Clear previous results
+                clearHighlights(section);
+
                 if (searchTerm.length < 2) {
                     section.classList.remove('hidden');
-                    // Optional: Collapse all or keep current state
-                    // section.classList.remove('active'); 
+                    // Reset cards within section
+                    section.querySelectorAll('.card').forEach(c => c.style.display = 'block');
                     return;
                 }
 
                 const content = section.innerText.toLowerCase();
-                if (content.includes(searchTerm)) {
+                const cards = section.querySelectorAll('.card');
+                let sectionHasMatch = false;
+
+                cards.forEach(card => {
+                    if (card.innerText.toLowerCase().includes(searchTerm)) {
+                        card.style.display = 'block';
+                        applyHighlight(card, searchTerm);
+                        sectionHasMatch = true;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                if (sectionHasMatch) {
                     section.classList.remove('hidden');
-                    section.classList.add('active'); // Auto-expand
-                    hasResults = true;
-                    // TODO: Add highlighting logic here if desired
+                    section.classList.add('active');
                 } else {
                     section.classList.add('hidden');
                     section.classList.remove('active');
