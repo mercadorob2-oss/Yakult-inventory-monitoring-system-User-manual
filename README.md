@@ -7,9 +7,12 @@ This is the complete web-based user manual for the Yakult Inventory Management S
 ## 📁 Files Included
 
 - **index.html** - Main user manual page with navigation and content
+- **itcm.html** - IT Call Monitoring (ITCM) user manual page
 - **styles.css** - Professional styling and responsive design
 - **script.js** - Interactive features and smooth navigation
-- **content-sections.html** - Additional content sections (reference)
+- **IMAGES/** - Desktop app screenshots (YIMS)
+- **ITCM-IMAGES/** - IT Call Monitoring screenshots (ITCM)
+- **images-mobile/** - YakultScanner/mobile screenshots
 
 ## 🚀 How to Use
 
@@ -29,15 +32,16 @@ The user manual covers:
 1. **Getting Started** - Introduction and quick start guide
 2. **Login & Registration** - Account creation and authentication
 3. **Dashboard** - Overview of the main dashboard
-4. **Master Data** - Company, Department, Branch, Employee, Vendor management
-5. **Item Management** - Adding and managing items
-6. **Inventory** - Inventory tracking and management
-7. **Requests** - Equipment request workflow
-8. **Sets & Invoices** - Invoice and set management
-9. **Renewals** - Software/license renewal tracking
-10. **Archive** - Archiving and restoration
-11. **Reports** - Generating reports and analytics
-12. **Troubleshooting** - Common issues and solutions
+4. **IT Call Monitoring (ITCM)** - Ticketing, escalations, email notifications, diagnostics, profiles, and reports
+5. **Master Data** - Company, Department, Branch, Employee, Vendor management
+6. **Item Management** - Adding and managing items
+7. **Inventory** - Inventory tracking and management
+8. **Requests** - Equipment request workflow
+9. **Sets & Invoices** - Invoice and set management
+10. **Renewals** - Software/license renewal tracking
+11. **Archive** - Archiving and restoration
+12. **Reports** - Generating reports and analytics
+13. **Troubleshooting** - Common issues and solutions
 
 ## ✨ Features
 

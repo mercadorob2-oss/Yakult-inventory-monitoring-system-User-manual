@@ -187,26 +187,37 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Smooth scrolling for navigation links
     const navLinks = document.querySelectorAll('.nav-link');
+
+    const navigateToSection = (targetId) => {
+        if (!targetId || !targetId.startsWith('#')) return;
+        const targetSection = document.querySelector(targetId);
+        if (!targetSection) return;
+
+        // Mark matching sidebar item active (if present)
+        navLinks.forEach(l => l.classList.remove('active'));
+        const match = Array.from(navLinks).find(l => l.getAttribute('href') === targetId);
+        if (match) match.classList.add('active');
+
+        // Expand and scroll
+        targetSection.classList.add('active');
+        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
+
     navLinks.forEach(link => {
         link.addEventListener('click', function (e) {
             e.preventDefault();
-            navLinks.forEach(l => l.classList.remove('active'));
-            this.classList.add('active');
-
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-
-            if (targetSection) {
-                // Expand the target section
-                targetSection.classList.add('active');
-
-                targetSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
+            navigateToSection(this.getAttribute('href'));
         });
     });
+
+    // Quick link button under YakultScanner (IT Call Monitoring)
+    const itcmQuickLink = document.getElementById('itcm-quick-link');
+    if (itcmQuickLink) {
+        itcmQuickLink.addEventListener('click', function (e) {
+            e.preventDefault();
+            navigateToSection(this.getAttribute('href'));
+        });
+    }
 
     // Copy Button & Back to Top (Preserved from original)
     const codeBlocks = document.querySelectorAll('pre code');

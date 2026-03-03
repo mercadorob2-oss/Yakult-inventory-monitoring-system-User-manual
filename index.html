@@ -41,6 +41,14 @@
                 </a>
             </div>
 
+            <!-- Link to IT Call Monitoring Manual -->
+            <div style="padding: 0 1.5rem; margin-bottom: 1rem;">
+                <a href="itcm.html" class="btn btn-secondary"
+                    style="width: 100%; display: inline-flex; align-items: center; justify-content: center; gap: 8px;">
+                    <span>🛠️</span> <span class="text">IT Call Monitoring Manual</span>
+                </a>
+            </div>
+
             <ul class="nav-menu">
                 <li><a href="#getting-started" class="nav-link active"><span class="icon">🚀</span> <span
                             class="text">Getting Started</span></a></li>
@@ -74,6 +82,8 @@
                             class="text">Reports</span></a></li>
                 <li><a href="#notifications" class="nav-link"><span class="icon">🔔</span> <span
                             class="text">Notifications</span></a></li>
+                <li><a href="#it-call-monitoring" class="nav-link"><span class="icon">🛠️</span> <span
+                            class="text">IT Call Monitoring</span></a></li>
                 <li><a href="#troubleshooting" class="nav-link"><span class="icon">🔧</span> <span
                             class="text">Troubleshooting</span></a></li>
             </ul>
@@ -97,6 +107,7 @@
                     <button class="filter-btn" data-filter="master">📦 Master Data</button>
                     <button class="filter-btn" data-filter="inventory">📊 Inventory Ops</button>
                     <button class="filter-btn" data-filter="admin">⚙️ Admin & Reports</button>
+                    <button class="filter-btn" data-filter="itcm">🛠️ IT Call Monitoring</button>
                 </div>
             </div>
 
@@ -974,6 +985,195 @@
                         </ul>
                         <img src="IMAGES/NOTIFICATION_CENTER.png" alt="Notification Center Screen">
                     </div>
+                </div>
+            </section>
+
+            <!-- IT Call Monitoring Section (ITCM) -->
+            <section id="it-call-monitoring" class="section" data-category="itcm">
+                <div class="section-header">
+                    <h2>🛠️ IT Call Monitoring (ITCM)</h2>
+                    <i class="toggle-icon">▼</i>
+                </div>
+                <div class="section-content">
+
+                    <div class="card">
+                        <h3>Overview</h3>
+                        <p>
+                            <strong>IT Call Monitoring (ITCM)</strong> is the built-in ticketing and support monitoring
+                            module inside YIMS. It helps IT track issues, assignments, escalations, and resolution
+                            history.
+                        </p>
+                        <img src="ITCM-IMAGES/dashboard.png" alt="IT Call Monitoring Dashboard">
+
+                        <div class="feature-grid">
+                            <div class="feature-card">
+                                <h4>Ticket Tracking</h4>
+                                <p>Create, assign, and monitor tickets by status, idle time, and SLA.</p>
+                            </div>
+                            <div class="feature-card">
+                                <h4>Escalations</h4>
+                                <p>Auto-escalation and reminders help avoid missed or overdue requests.</p>
+                            </div>
+                            <div class="feature-card">
+                                <h4>Email Notifications</h4>
+                                <p>Send notifications for new tickets, status changes, escalations, and reminders.</p>
+                            </div>
+                            <div class="feature-card">
+                                <h4>Profiles & Reports</h4>
+                                <p>Review workload, performance metrics, and export reports.</p>
+                            </div>
+                        </div>
+
+                        <div class="tip">
+                            <strong>Tip:</strong> If you see “(no account)” beside an employee, create a linked user
+                            account in <strong>Account Management</strong> so they can be used for assignment and
+                            tracking.
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Dashboard</h3>
+                        <p>The Dashboard shows a high-level view of ticket health and priority areas.</p>
+                        <ul>
+                            <li><strong>Open Tickets:</strong> Current active workload</li>
+                            <li><strong>Critical:</strong> Urgent/high-impact tickets</li>
+                            <li><strong>Avg Resolution:</strong> Average completion time (selected period)</li>
+                            <li><strong>Today’s Volume:</strong> Tickets created/updated today</li>
+                            <li><strong>Requires Attention:</strong> Overdue or high-risk items</li>
+                        </ul>
+                        <img src="ITCM-IMAGES/dashboard.png" alt="IT Call Monitoring Dashboard Metrics">
+                    </div>
+
+                    <div class="card">
+                        <h3>Create a New Ticket</h3>
+                        <p>Use the <strong>New Ticket</strong> form to record the caller and issue details.</p>
+                        <img src="ITCM-IMAGES/new-ticket.png" alt="New Ticket Form">
+                        <ol>
+                            <li>Select <strong>Company</strong>, <strong>Department</strong>, and (optional) <strong>Branch</strong>.</li>
+                            <li>Enter <strong>Caller Name</strong> and describe the <strong>Technical Problem</strong>.</li>
+                            <li>(Optional) Add <strong>Initial Troubleshooting / Notes</strong>.</li>
+                            <li>(Optional) Set custom escalation thresholds using <strong>Set escalation</strong>.</li>
+                            <li>Click <strong>Create Ticket</strong>.</li>
+                        </ol>
+                        <div class="warning">
+                            <strong>Note:</strong> Keep the “Technical Problem” description clear and specific (device,
+                            error message, location, and impact).
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Ticket List & Filtering</h3>
+                        <p>Ticket List is where you manage daily work: filter, assign, and open ticket details.</p>
+                        <img src="ITCM-IMAGES/pending-tickets.png" alt="Pending Tickets List">
+                        <ul>
+                            <li><strong>Status Tabs:</strong> Pending, In Progress, Escalated, Overdue, Solved</li>
+                            <li><strong>Quick Filters:</strong> All, Mine, Unassigned, Overdue</li>
+                            <li><strong>SLA / Idle:</strong> Helps identify tickets that need follow-up</li>
+                            <li><strong>Search:</strong> Search by ticket code or keywords</li>
+                        </ul>
+                        <div class="tip">
+                            <strong>Tip:</strong> Use <strong>Unassigned</strong> to quickly find tickets that still
+                            need an owner.
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Ticket Details (Notes & History)</h3>
+                        <p>Open a ticket to view full details, change status, and keep an audit trail.</p>
+                        <img src="ITCM-IMAGES/ticket-details.png" alt="Ticket Details Dialog">
+                        <ul>
+                            <li><strong>Notes tab:</strong> Add updates, actions taken, and remarks.</li>
+                            <li><strong>History tab:</strong> Tracks status changes and key updates over time.</li>
+                            <li><strong>Status:</strong> Pending → In Progress → Solved/Closed (or Escalated).</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>Mark Ticket as Resolved (Service vs Replacement)</h3>
+                        <p>When closing a ticket, log the resolution properly for tracking and inventory audit.</p>
+                        <div class="feature-grid">
+                            <div class="feature-card">
+                                <h4>Service Only</h4>
+                                <p>Issue resolved without using parts (e.g., configuration, cleaning, re-install).</p>
+                            </div>
+                            <div class="feature-card">
+                                <h4>Replacement</h4>
+                                <p>Parts were used or item was swapped; keep inventory movement accurate.</p>
+                            </div>
+                        </div>
+                        <img src="ITCM-IMAGES/mark-as-resolutions-service.png" alt="Mark Ticket Resolution - Service Only">
+                        <img src="ITCM-IMAGES/mark-as-resolutions-replacements.png" alt="Mark Ticket Resolution - Replacement">
+                        <div class="warning">
+                            <strong>Important:</strong> Always select the correct inventory action (return to stock,
+                            for repair, out of stock) so inventory stays accurate.
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Employee Profiles & Performance</h3>
+                        <p>Profiles show workload and performance per technician (assigned tickets, SLA, and history).</p>
+                        <img src="ITCM-IMAGES/profile-section-page.png" alt="Employee Profiles Page">
+                        <img src="ITCM-IMAGES/employee-profile.png" alt="Employee Profile Details">
+                        <ul>
+                            <li>Use the <strong>Date Range</strong> to review performance for a selected period.</li>
+                            <li>Use <strong>Escalation Assignee…</strong> (Admin/Developer) to configure auto-assignment for escalations.</li>
+                            <li>Open tickets and use the right-side profile card to see a ticket’s key info quickly.</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>Auto-Escalation Assignee</h3>
+                        <p>
+                            Auto escalation runs in the background to prevent tickets from being ignored. Admin/Developer
+                            users can configure who receives escalated assignments.
+                        </p>
+                        <img src="ITCM-IMAGES/auto-escalation-assignee.png" alt="Auto-Escalation Assignee">
+                        <div class="info">
+                            <strong>Note:</strong> In newer versions, the dialog may include both <em>Supervisor</em>
+                            and an optional <em>Manager</em> stage.
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Email Notifications (Setup, Templates, Logs)</h3>
+                        <p>Configure SMTP and notification rules so stakeholders receive updates.</p>
+                        <img src="ITCM-IMAGES/email-setup.png" alt="Email Notification Setup">
+                        <ul>
+                            <li>Configure SMTP server, port, SSL, username/password, From name/email.</li>
+                            <li>Enable rules: New ticket, Status changes, Escalation, Reminder.</li>
+                            <li>Set <strong>Group Email</strong> and <strong>Escalation Email</strong> as defaults.</li>
+                        </ul>
+                        <img src="ITCM-IMAGES/email-template.png" alt="Email Templates">
+                        <p>Use templates to control the subject/body and insert ticket variables.</p>
+                        <img src="ITCM-IMAGES/email-logs.png" alt="Email Log">
+                        <div class="tip">
+                            <strong>Tip:</strong> Check <strong>Email Log</strong> if users report missing emails; it
+                            records sent/failed/skipped notifications with details.
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Diagnostics & Logs</h3>
+                        <p>Diagnostics helps verify schema, email pipeline, and background processing health.</p>
+                        <img src="ITCM-IMAGES/diagnostics-logs.png" alt="Diagnostics Page">
+                        <ul>
+                            <li><strong>Schema checks:</strong> Confirms required tables/views exist.</li>
+                            <li><strong>Email/background status:</strong> Shows last runs and errors.</li>
+                            <li><strong>Run SMTP Test:</strong> Sends a test email for a selected ticket.</li>
+                            <li><strong>Open Logs:</strong> Opens the local log folder for troubleshooting.</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>Reports</h3>
+                        <p>Reports provide summaries and exports for analysis and management updates.</p>
+                        <img src="ITCM-IMAGES/reports-page.png" alt="IT Call Monitoring Reports">
+                        <ul>
+                            <li>Filter by date range, company/department, status, and assignee.</li>
+                            <li>Use export buttons to save results for review.</li>
+                        </ul>
+                    </div>
+
                 </div>
             </section>
 

@@ -291,7 +291,7 @@ body {
 }
 
 .section.active .section-content {
-    max-height: 5000px;
+    max-height: 20000px;
     /* Large enough to show content */
     opacity: 1;
     padding: var(--spacing-lg);
@@ -708,6 +708,34 @@ a:hover {
 .feature-card h4 {
     color: var(--primary-color);
     margin-bottom: var(--spacing-sm);
+}
+
+/* Image Grid (figures + captions) */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+    align-items: start;
+}
+
+.image-grid figure {
+    margin: 0;
+    background: var(--light-bg);
+    padding: var(--spacing-md);
+    border-radius: var(--radius);
+    border: 1px solid var(--border-color);
+}
+
+.image-grid img {
+    margin: 0;
+}
+
+.image-grid figcaption {
+    margin-top: var(--spacing-sm);
+    color: var(--text-light);
+    font-size: 0.9rem;
+    line-height: 1.4;
 }
 
 /* Helper */
