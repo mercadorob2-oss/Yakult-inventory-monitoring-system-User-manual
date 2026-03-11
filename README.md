@@ -8,11 +8,13 @@ This is the complete web-based user manual for the Yakult Inventory Management S
 
 - **index.html** - Main user manual page with navigation and content
 - **itcm.html** - IT Call Monitoring (ITCM) user manual page
+- **borrow.html** - Borrow Items user manual page
 - **styles.css** - Professional styling and responsive design
 - **script.js** - Interactive features and smooth navigation
 - **IMAGES/** - Desktop app screenshots (YIMS)
 - **ITCM-IMAGES/** - IT Call Monitoring screenshots (ITCM)
 - **images-mobile/** - YakultScanner/mobile screenshots
+- **borrow_images/** - Borrow Items screenshots
 
 ## 🚀 How to Use
 

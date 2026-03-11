@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borrow Items - User Manual</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <div class="logo">
+                <div class="logo-header">
+                    <h2>Borrow Items</h2>
+                    <button id="sidebar-toggle" class="toggle-btn" title="Toggle Sidebar">Menu</button>
+                </div>
+                <p class="logo-text">Borrow Items Manual</p>
+            </div>
+
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Search borrow manual...">
+            </div>
+
+            <div style="padding: 0 1.5rem; margin-bottom: 1rem;">
+                <button onclick="window.print()" class="btn btn-secondary"
+                    style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                    <span>Print / Save as PDF</span>
+                </button>
+            </div>
+
+            <div style="padding: 0 1.5rem; margin-bottom: 1rem;">
+                <a href="index.html" class="btn btn-secondary"
+                    style="width: 100%; display: inline-flex; align-items: center; justify-content: center; gap: 8px;">
+                    <span>Back to Desktop Manual</span>
+                </a>
+            </div>
+
+            <div style="padding: 0 1.5rem; margin-bottom: 1rem;">
+                <a href="itcm.html" class="btn btn-secondary"
+                    style="width: 100%; display: inline-flex; align-items: center; justify-content: center; gap: 8px;">
+                    <span>ITCM Manual</span>
+                </a>
+            </div>
+
+            <div style="padding: 0 1.5rem; margin-bottom: 1rem;">
+                <a href="yakultscanner.html" class="btn btn-secondary"
+                    style="width: 100%; display: inline-flex; align-items: center; justify-content: center; gap: 8px;">
+                    <span>YakultScanner Manual</span>
+                </a>
+            </div>
+
+            <ul class="nav-menu">
+                <li><a href="#borrow-overview" class="nav-link active"><span class="icon">1</span><span class="text">Overview</span></a></li>
+                <li><a href="#borrow-dashboard" class="nav-link"><span class="icon">2</span><span class="text">Dashboard</span></a></li>
+                <li><a href="#borrow-existing" class="nav-link"><span class="icon">3</span><span class="text">Borrow Existing</span></a></li>
+                <li><a href="#borrow-new" class="nav-link"><span class="icon">4</span><span class="text">Add New Item</span></a></li>
+                <li><a href="#borrower-modes" class="nav-link"><span class="icon">5</span><span class="text">Borrower Modes</span></a></li>
+                <li><a href="#return-item" class="nav-link"><span class="icon">6</span><span class="text">Return Item</span></a></li>
+                <li><a href="#open-borrows" class="nav-link"><span class="icon">7</span><span class="text">Open Borrows</span></a></li>
+                <li><a href="#borrow-history" class="nav-link"><span class="icon">8</span><span class="text">History</span></a></li>
+                <li><a href="#borrow-tools" class="nav-link"><span class="icon">9</span><span class="text">Search and Export</span></a></li>
+                <li><a href="#borrow-troubleshooting" class="nav-link"><span class="icon">10</span><span class="text">Troubleshooting</span></a></li>
+            </ul>
+        </nav>
+
+        <main class="content">
+            <div class="header">
+                <div style="display: flex; justify-content: space-between; align-items: start; gap: 1rem; flex-wrap: wrap;">
+                    <div>
+                        <h1>Borrow Items</h1>
+                        <p class="subtitle">Borrowing and returning serialized assets in YIMS</p>
+                    </div>
+                    <button id="global-toggle" class="btn btn-secondary">Expand All</button>
+                </div>
+
+                <div class="filter-bar" style="margin-top: 1rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="general">Overview</button>
+                    <button class="filter-btn" data-filter="borrow">Borrow</button>
+                    <button class="filter-btn" data-filter="return">Return</button>
+                    <button class="filter-btn" data-filter="records">Records</button>
+                    <button class="filter-btn" data-filter="support">Support</button>
+                </div>
+            </div>
+
+            <section id="borrow-overview" class="section" data-category="general">
+                <div class="section-header">
+                    <h2>Overview</h2>
+                    <i class="toggle-icon">▼</i>
+                </div>
+                <div class="section-content">
+                    <div class="card">
+                        <h3>What is Borrow Items?</h3>
+                        <p>
+                            <strong>Borrow Items</strong> is the YIMS desktop module used to log borrowed and returned
+                            serialized assets. It records who borrowed the item, which department they belong to, who
+                            encoded the transaction, and when the item was borrowed or returned.
+                        </p>
+                        <img src="borrow_images/borrow_dashboard.png" alt="Borrow Items dashboard">
+                        <div class="feature-grid">
+                            <div class="feature-card">
+                                <h4>Borrow Logging</h4>
+                                <p>Log borrowed items by serial number.</p>
+                            </div>
+                            <div class="feature-card">
+                                <h4>Return Logging</h4>
+                                <p>Close open borrow records when items are returned.</p>
+                            </div>
+                            <div class="feature-card">
+                                <h4>Open Borrows</h4>
+                                <p>Track items that are still out.</p>
+                            </div>
+                            <div class="feature-card">
+                                <h4>History</h4>
+                                <p>Review completed borrow and return activity.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="borrow-dashboard" class="section" data-category="general">
+                <div class="section-header">
+                    <h2>Dashboard Layout</h2>
+                    <i class="toggle-icon">▼</i>
+                </div>
+                <div class="section-content">
+                    <div class="card">
+                        <h3>Main Screen Areas</h3>
+                        <ul>
+                            <li><strong>Borrow Item panel:</strong> resolve a serial and log a new borrow</li>
+                            <li><strong>Return Item panel:</strong> find an open borrow and return it</li>
+                            <li><strong>Open Borrows tab:</strong> currently borrowed items</li>
+                            <li><strong>History tab:</strong> previously returned items</li>
+                            <li><strong>Top controls:</strong> search, refresh, paging, and export</li>
+                        </ul>
+                        <img src="borrow_images/borrow_dashboard.png" alt="Borrow dashboard layout">
+                        <div class="tip">
+                            <strong>Tip:</strong> This module is designed for fast scan-and-log workflows, so barcode scanners work well with the serial fields.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="borrow-existing" class="section" data-category="borrow">
+                <div class="section-header">
+                    <h2>Borrow an Existing Item</h2>
+                    <i class="toggle-icon">▼</i>
+                </div>
+                <div class="section-content">
+                    <div class="card">
+                        <h3>Borrow a Listed Inventory Item</h3>
+                        <ol>
+                            <li>Go to the <strong>Borrow Item</strong> panel.</li>
+                            <li>Scan or type the <strong>Serial Number</strong>.</li>
+                            <li>Click <strong>Resolve</strong>.</li>
+                            <li>Check the item name and description shown by the system.</li>
+                            <li>Select the <strong>Company</strong>, <strong>Department</strong>, and employee.</li>
+                            <li>Click <strong>Borrow</strong>.</li>
+                            <li>Confirm the borrow details.</li>
+                        </ol>
+
+                        <div class="image-grid">
+                            <figure>
+                                <img src="borrow_images/borrow_item_section.png" alt="Borrow item section">
+                                <figcaption>Borrow Item section</figcaption>
+                            </figure>
+                            <figure>
+                                <img src="borrow_images/item_borrow_Listed_Inventory.png" alt="Borrow listed inventory item">
+                                <figcaption>Borrowing a listed inventory item</figcaption>
+                            </figure>
+                        </div>
+
+                        <div class="warning">
+                            <strong>Important:</strong> If the item already has an open borrow record, the system should block another active borrow for the same item.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="borrow-new" class="section" data-category="borrow">
+                <div class="section-header">
+                    <h2>Add New Item and Borrow</h2>
+                    <i class="toggle-icon">▼</i>
+                </div>
+                <div class="section-content">
+                    <div class="card">
+                        <h3>Borrow an Item Not Yet in Inventory</h3>
+                        <p>
+                            If the serial number is not found, the module can guide the user to create the item first,
+                            then continue with the borrow process.
+                        </p>
+                        <ol>
+                            <li>Enter a serial number that does not yet exist in inventory.</li>
+                            <li>Choose to add the item, or click <strong>Add New</strong>.</li>
+                            <li>Fill in the item details.</li>
+                            <li>Save the item.</li>
+                            <li>Select the borrower and finish the borrow transaction.</li>
+                        </ol>
+                        <img src="borrow_images/item_borrow_Listed_not_Inventory.png" alt="Add new item and borrow">
+                        <div class="info">
+                            <strong>Note:</strong> This flow is useful for external, newly received, or not-yet-registered assets that must be borrowed immediately.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="borrower-modes" class="section" data-category="borrow">
+                <div class="section-header">
+                    <h2>Borrower Selection Modes</h2>
+                    <i class="toggle-icon">▼</i>
+                </div>
+                <div class="section-content">
+                    <div class="card">
+                        <h3>Listed Employee vs Not Listed</h3>
+                        <ul>
+                            <li><strong>Listed employee:</strong> choose an existing employee from the dropdowns</li>
+                            <li><strong>Not listed:</strong> create a new employee and return to the borrow screen</li>
+                        </ul>
+
+                        <div class="image-grid">
+                            <figure>
+                                <img src="borrow_images/borrowed_by_listem_employee.png" alt="Listed employee mode">
+                                <figcaption>Listed employee mode</figcaption>
+                            </figure>
+                            <figure>
+                                <img src="borrow_images/borrowed_by_not_listem_employee.png" alt="Not listed employee mode">
+                                <figcaption>Not listed employee mode</figcaption>
+                            </figure>
+                        </div>
+
+                        <div class="warning">
+                            <strong>Note:</strong> The employee should have a valid department assignment before the borrow is logged.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="return-item" class="section" data-category="return">
+                <div class="section-header">
+                    <h2>Return Item</h2>
+                    <i class="toggle-icon">▼</i>
+                </div>
+                <div class="section-content">
+                    <div class="card">
+                        <h3>How to Return a Borrowed Item</h3>
+                        <ol>
+                            <li>Go to the <strong>Return Item</strong> panel.</li>
+                            <li>Scan or type the serial number.</li>
+                            <li>Click <strong>Find Open</strong>.</li>
+                            <li>Review the open borrow information shown by the system.</li>
+                            <li>Select the employee returning the item.</li>
+                            <li>Click <strong>Return</strong>.</li>
+                            <li>Confirm the return details.</li>
+                        </ol>
+                        <img src="borrow_images/return_item_section.png" alt="Return item section">
+                        <div class="tip">
+                            <strong>Tip:</strong> You can also select a row from the Open Borrows table and use <strong>Return Selected</strong>.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="open-borrows" class="section" data-category="records">
+                <div class="section-header">
+                    <h2>Open Borrows</h2>
+                    <i class="toggle-icon">▼</i>
+                </div>
+                <div class="section-content">
+                    <div class="card">
+                        <h3>Current Borrowed Items</h3>
+                        <p>The <strong>Open Borrows</strong> tab lists all items that are still out and not yet returned.</p>
+                        <ul>
+                            <li><strong>Serial Number:</strong> item serial</li>
+                            <li><strong>Item Description:</strong> item name, model, and details</li>
+                            <li><strong>Borrowed By:</strong> employee who borrowed the item</li>
+                            <li><strong>Department:</strong> linked department</li>
+                            <li><strong>Elapsed:</strong> current borrow duration</li>
+                            <li><strong>Encoded By:</strong> user who logged the borrow</li>
+                            <li><strong>Borrowed:</strong> borrow date and time</li>
+                        </ul>
+                        <img src="borrow_images/borrow_table_list.png" alt="Open borrows table">
+                    </div>
+                </div>
+            </section>
+
+            <section id="borrow-history" class="section" data-category="records">
+                <div class="section-header">
+                    <h2>History</h2>
+                    <i class="toggle-icon">▼</i>
+                </div>
+                <div class="section-content">
+                    <div class="card">
+                        <h3>Completed Borrow Transactions</h3>
+                        <p>
+                            Once an item is returned, its record moves into the <strong>History</strong> tab.
+                            This gives you a record of completed borrow and return activity.
+                        </p>
+                        <ul>
+                            <li>Borrowed date/time</li>
+                            <li>Returned date/time</li>
+                            <li>Borrowed by employee</li>
+                            <li>Returned by employee</li>
+                            <li>Encoded by user</li>
+                        </ul>
+                        <img src="borrow_images/borrow_history_table.png" alt="Borrow history table">
+                    </div>
+                </div>
+            </section>
+
+            <section id="borrow-tools" class="section" data-category="records">
+                <div class="section-header">
+                    <h2>Search, Refresh, Paging, and Export</h2>
+                    <i class="toggle-icon">▼</i>
+                </div>
+                <div class="section-content">
+                    <div class="card">
+                        <h3>Working with Records</h3>
+                        <ul>
+                            <li><strong>Search:</strong> filter visible records</li>
+                            <li><strong>Refresh:</strong> reload the latest data</li>
+                            <li><strong>Prev / Next:</strong> move through pages</li>
+                            <li><strong>Export CSV:</strong> export the current tab for reporting</li>
+                        </ul>
+                        <img src="borrow_images/borrow_dashboard.png" alt="Borrow dashboard controls">
+                        <div class="info">
+                            <strong>Note:</strong> Export applies to the currently visible list, either Open Borrows or History.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="borrow-troubleshooting" class="section" data-category="support">
+                <div class="section-header">
+                    <h2>Troubleshooting</h2>
+                    <i class="toggle-icon">▼</i>
+                </div>
+                <div class="section-content">
+                    <div class="card">
+                        <h3>Common Issues</h3>
+                        <ul>
+                            <li><strong>Item not found:</strong> the serial number does not exist in inventory yet</li>
+                            <li><strong>Item is already borrowed:</strong> the item already has an open borrow record</li>
+                            <li><strong>No open borrow found:</strong> there is no active borrow record for that serial</li>
+                            <li><strong>Borrow schema missing:</strong> the borrow database objects are not installed</li>
+                            <li><strong>Employee has no department assigned:</strong> complete the employee profile first</li>
+                        </ul>
+                        <div class="warning">
+                            <strong>Important:</strong> If the screen opens but borrows and returns cannot be logged, verify that the Borrow Items database schema has been installed correctly.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="footer">
+                <p>&copy; 2025 Yakult Inc. Philippines - Borrow Items</p>
+                <p>Manual extension for YIMS</p>
+            </footer>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
